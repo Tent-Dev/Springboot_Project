@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous" />
+		<script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
+<title>Login Form</title>
+</head>
+<section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="system">
+		<div class="container">
+	     	<div class="col-12">
+		        <h1 class="mb-0 text-center admin-font-head">TENT's
+		          <span style="color: #B79C58;">Hotel reservation system</span>
+		        </h1>
+		        <div class="subheading mb-5 text-center" style="opacity: 0.5;">hotel management system.
+		        </div>
+		        <div class="text-center">
+					<div class="col-12" align="center">
+						<form th:action="@{/login}" method="post">
+							<div class="input-group col-md-4 col-sm-6">
+								<div class="input-group-prepend">
+									<div class="input-group-text badge-textbox-black"><i class="fas fa-user"></i></div>
+								</div>
+								<input id="userlogin" name="email" placeholder="Email" class="form-control" required>
+							</div>
+							<br>
+							<div class="input-group col-md-4 col-sm-6">
+								<div class="input-group-prepend">
+									<div class="input-group-text badge-textbox-black"><i class="fas fa-key"></i></div>
+								</div>
+								<input id="passlogin" name="password" placeholder="Password" type="password" class="form-control" required>
+							</div>
+							<br>
+							<div class="form-group col-6">
+					        	<input type="submit" value="Login" class="btn" style="background-color: #4D4C48;color: white;">
+					        	<br><br><span th:if="${param.error}" style="color: red;">The user name or password you entered
+		is incorrect</span>
+							</div>
+			    		</form>
+					</div>
+					<hr>
+					<span class="text-center" style="font-size: 12px; opacity: 0.5; ">By Chutipas Borsub | Trainee @ Orisma Technology Co., Ltd.</span>
+				</div>
+		    </div>
+	  	</div>
+	    </section>
+	</body>
+</html>
