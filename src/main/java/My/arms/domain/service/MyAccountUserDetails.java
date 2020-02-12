@@ -4,13 +4,13 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.management.relation.Role;
-
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import org.springframework.security.core.userdetails.User;
+import My.arms.domain.entity.Role;
+import My.arms.domain.entity.User;
+
 
 public class MyAccountUserDetails implements UserDetails {
 	

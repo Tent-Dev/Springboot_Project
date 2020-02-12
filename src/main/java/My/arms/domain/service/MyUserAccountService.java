@@ -1,6 +1,6 @@
 package My.arms.domain.service;
 
-import org.springframework.security.core.userdetails.User;
+import My.arms.domain.entity.User;
 
 public interface MyUserAccountService {
 

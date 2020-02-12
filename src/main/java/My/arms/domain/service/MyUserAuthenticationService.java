@@ -3,8 +3,6 @@ package My.arms.domain.service;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.management.relation.Role;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -12,8 +10,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-//import org.springframework.security.core.userdetails.User;
 
+import My.arms.domain.entity.Role;
 import My.arms.domain.entity.User;
 import My.arms.domain.repository.MyUserRepository;
 
@@ -25,6 +23,11 @@ public class MyUserAuthenticationService implements MyUserAccountService, UserDe
 
 	@Autowired
 	private MyUserRepository userRepository;
+	
+	@Override
+	public User findOneByEmail(String username) {
+		return userRepository.findOneByEmail(username);
+	}
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
