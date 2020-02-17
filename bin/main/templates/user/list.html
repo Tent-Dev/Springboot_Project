@@ -10,19 +10,38 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous" />
 	<script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
 <title>User list</title>
+<style>
+		.card-header {
+		    background-color: #4E4D4D !important;
+		    border-bottom: 1px solid rgba(0,0,0,.125);
+		    color: white;
+		}
+		.card{
+			border: 2px solid rgba(0,0,0,.125) !important;
+		    border-style: dashed !important;
+		}
+		.card-footer {
+		    background-color: rgba(0,0,0,.03) !important;
+		    border-top: 0px solid rgba(0,0,0,.125) !important;
+		}
+</style>
 </head>
 <body>
+<div th:include="layout/_header :: header">
+		<!-- Header comes here -->
+	</div>
 <div  class="container">
-        <table class="table table-striped">
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-            </tr>
-            <tr th:each="user : ${users}">
-                <td th:text="${user.id}"></td>
-                <td th:text="${user.name}"></td>
-            </tr>
-        </table>
+	<div class="col-12 row" style="margin-top:10px;">
+		<div class="col-4 card shadow-sm" th:each="user : ${users}">
+			<div class="card-header">
+				<div><span class="badge badge-secondary">ID&nbsp;#<span th:text="${user.id}"></span></span></div>
+			</div>
+			<div class="card-body" th:text="${user.email}">
+			
+			</div>
+		</div>
+	</div>
+        
         <div th:include="common/pagination :: pagination"></div>
 	</div>
         

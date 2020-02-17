@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import My.arms.domain.component.PageWrapper;
 import My.arms.domain.entity.User;
 import My.arms.domain.service.MyUserService;
 
@@ -34,15 +35,15 @@ public class MyUserController {
 	@Autowired
 	MyUserService userService;
 	
-	@RequestMapping("/users")
-	public String list(Model model,Pageable pageable){
-		Page<User> pageUserList = userService.getAllUsers(pageable);
-		model.addAttribute("page", pageUserList);
-		model.addAttribute("users", pageUserList.getContent());
-		model.addAttribute("url", "/users");
-		return "user/list";
-		//@PageableDefault(value = 3)  means 3 data is displayed in one page
-	}
+	@RequestMapping("/list")
+	   public String list(Model model, Pageable pageable) {
+	        Page<User> pageUserList = userService.getAllUsers(pageable);
+	        PageWrapper<User> page = new PageWrapper<User>(pageUserList, "/list");
+	        model.addAttribute("page", page);
+	        model.addAttribute("users", page.getContent());
+	        return "user/list";
+	    }
+
 
 
 }

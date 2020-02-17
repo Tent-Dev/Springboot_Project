@@ -13,6 +13,6 @@ public interface MyUserRepository extends JpaRepository<User, Integer> {
 	User  findOneByEmail(String email);
 	
 	//finBy<column_name>
-	 Page<User> findByUser(Long userId, Pageable pageable);
+	 //Page<User> findByUser(Long userId, Pageable pageable);
 }
 

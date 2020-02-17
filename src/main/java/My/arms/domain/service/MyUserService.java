@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import My.arms.domain.entity.User;
 import My.arms.domain.repository.MyUserRepository;
 
+@Service
 public class MyUserService {
 	@Autowired
 	MyUserRepository userRepository;
