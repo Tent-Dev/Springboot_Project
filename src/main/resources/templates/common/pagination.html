@@ -1,9 +1,9 @@
 <div th:fragment='pagination'>
-	<ul class='pagination pagination-centered'>
-		<li th:class="${page.firstPage}?'disabled':''" style="display: inline">
-			<span class="page-link" th:if='${page.firstPage}'>First</span> <a class="page-link"
+	<ul class='pagination justify-content-center'>
+		<li th:classappend="${page.firstPage}?'disabled':''" style="display: inline;">
+			<span class="page-link" style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" th:if='${page.firstPage}'>First</span> <a class="page-link"
 			th:if='${not page.firstPage}'
-			th:href='@{${page.url}(page=0,size=${page.size})}'>First</a>
+			th:href='@{${page.url}(page=0,size=${page.size})}' style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;">First</a>
 		</li>
 		<li class="page-item" th:classappend="${page.hasPreviousPage}? '' : 'disabled'"
 			style="display: inline"><span class="page-link"
