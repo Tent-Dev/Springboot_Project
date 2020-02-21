@@ -25,40 +25,30 @@
 	crossorigin="anonymous" />
 <script
 	src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
+<link rel="stylesheet" type="text/css" media="all"  
+      href="../../css/MyCss.css" th:href="@{/css/MyCss.css}" />
 <title>Security Passed</title>
-<style>
-footer {
-    background-color: #4E4D4D;
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
-    margin-top: 30px;
-    position: absolute;
-    width: 100%;
-    bottom: -1000;
-    color: white;
-    text-align: center;
-}
-</style>
 </head>
 <body>
 	<div th:include="layout/_header :: header">
 		<!-- Header comes here -->
 	</div>
-	<div class="section-room section-reservation-page"></div>
-  <div class="container img-thumb">
-    <h1 class="text-custom-default">Reservation</h1>
-    <p class="font-weight-light text-custom-quote">Search your time to vacation and select type of room. After that you can choose the payment rate for discount or special offer additionally.</p><hr class="hr-custom">
-  </div>
-	
+	<section class="text-center" style="padding: 10px;">
+		<div class="section-room section-reservation-page"></div>
+		<div class="container img-thumb">
+			<h1 class="text-custom-default">Welcome to Admin System</h1>
+			<p class="font-weight-light text-custom-quote">The Example Page for Springboot Project.</p>
+			<hr class="hr-custom">
+		</div>
+	</section>
+
 	<div class="container" layout:fragment="content">
 		<div class="row">
-		<div class="col-12" align="center">
-			<h2>Welcome to Admin System</h2>
+			<div class="col-12" align="center">
+				<h2>Welcome to Admin System</h2>
+			</div>
+
 		</div>
-		
-		</div>
-		<span sec:authentication="principal.authorities"></span> | <span
-			sec:authentication="name">Login user</span>
 	</div>
 	<div th:replace="layout/_footer :: footer">
 		<!-- Footer comes here -->
