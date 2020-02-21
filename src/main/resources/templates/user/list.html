@@ -59,6 +59,18 @@
 	background-color: #4E4D4D;
 	border-color: #007bff;
 }
+
+footer {
+    background-color: #4E4D4D;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    margin-top: 30px;
+    position: absolute;
+    width: 100%;
+    bottom: -1000;
+    color: white;
+    text-align: center;
+}
 </style>
 </head>
 <body>
@@ -88,6 +100,8 @@
 
 		<div th:include="common/pagination :: pagination"></div>
 	</div>
-
+	<div th:replace="layout/_footer :: footer">
+		<!-- Footer comes here -->
+	</div>
 </body>
 </html>
